@@ -1,0 +1,35 @@
+Optimization terminated successfully.
+         Current function value: 0.545981
+         Iterations 7
+                           Logit Regression Results                           
+==============================================================================
+Dep. Variable:               inf_comp   No. Observations:                 1333
+Model:                          Logit   Df Residuals:                     1314
+Method:                           MLE   Df Model:                           18
+Date:                Thu, 04 Aug 2022   Pseudo R-squ.:                  0.1468
+Time:                        10:44:08   Log-Likelihood:                -727.79
+converged:                       True   LL-Null:                       -853.02
+Covariance Type:            nonrobust   LLR p-value:                 6.594e-43
+===============================================================================================================
+                                                  coef    std err          z      P>|z|      [0.025      0.975]
+---------------------------------------------------------------------------------------------------------------
+sepsis.(sirs/sepsis/septic.shock).(48h)        -0.7234      0.273     -2.647      0.008      -1.259      -0.188
+biologic.agent.60.days.prior.to.surgery         0.2578      0.124      2.074      0.038       0.014       0.501
+gender                                         -0.3746      0.179     -2.091      0.037      -0.726      -0.023
+cpt.code                                       -0.4668      0.147     -3.178      0.001      -0.755      -0.179
+current.smoker.within.1.year                   -0.5801      0.179     -3.241      0.001      -0.931      -0.229
+emergency.case                                  0.8097      0.415      1.953      0.051      -0.003       1.622
+diabetes.mellitus                              -0.0619      0.450     -0.138      0.891      -0.944       0.820
+asa.classification                             -0.0536      0.135     -0.397      0.691      -0.318       0.211
+wound.classification                            0.1509      0.088      1.709      0.087      -0.022       0.324
+ileostomy.formation                             0.9282      0.199      4.657      0.000       0.538       1.319
+serum.sodium                                   -0.0427      0.011     -3.838      0.000      -0.064      -0.021
+age.at.time.of.surgery                          0.0012      0.004      0.268      0.789      -0.008       0.010
+#.of.other.procedures                          -1.4130      0.142     -9.922      0.000      -1.692      -1.134
+serum.creatinine                                0.5681      0.291      1.955      0.051      -0.001       1.138
+bmi                                             0.0057      0.013      0.424      0.671      -0.021       0.032
+height                                          0.0280      0.008      3.332      0.001       0.012       0.044
+weight                                         -0.0005      0.001     -0.346      0.729      -0.003       0.002
+duration.of.surgical.procedure.(in.minutes)     0.0027      0.002      1.695      0.090      -0.000       0.006
+#.of.concurrent.procedures                     -0.1272      0.246     -0.517      0.605      -0.609       0.355
+===============================================================================================================
