@@ -42,15 +42,15 @@ The "sapply(data[, sapply(data, class) == 'factor'], levels)" line is used to di
 The "colSums(is.na(data))/nrow(data)" displays the proportion of missing values for each dataset. If a categorical variable has 25% or more of its values missing, then we drop the variable. 
 
 ```{r}
+#from Kevin's email
+data = subset(data,select=-c(X..of.postop.superficial.incisional.ssi,X..of.postop.deep.incisional.ssi,X..of.postop.organ.space.ssi,X..of.postop.wound.disruption,X..of.postop.pneumonia,X..of.postop.unplanned.intubation,X..of.postop.pulmonary.embolism,X..of.postop.on.ventilator...48.hours,X..of.postop.progressive.renal.insufficiency,X..of.postop.acute.renal.failure,X..of.postop.cva,X..of.postop.uti,X..of.postop.cardiac.arrest.requiring.cpr,X..of.postop.myocardial.infarction,X..of.postop.transfusion.intraop..postop..72h.of.surgery.start.time.,X..of.postop.vein.thrombosis.requiring.therapy,X..of.postop.c..diff,X..of.postop.sepsis,X..of.postop.septic.shock,X..of.postop.other.occurrences,surgical.wound.s..closure,hospital.length.of.stay,hospital.discharge.destination,postop.death.w.in.30.days.of.procedure,postoperative.death...30.days.of.procedure,X..of.readmissions.w.in.30.days,X..of.unplanned.readmissions,first.unplanned.return.cpt,first.unplanned.return.to.or,colectomy.postop.anastomotic.leak,colectomy.prolonged.postoperative.npo.or.ngt.use))
+
 #drop variables that have >=25% missing values and those with only one levels
 data = subset(data, select = -c(malnourishment,colectomy.malignancy..pathologic.m.stage,colectomy.malignancy..pathologic.n.stage,colectomy.malignancy..pathologic.t.stage,
-first.unplanned.return.cpt,postoperative.death...30.days.of.procedure,
-surgical.wound.s..closure,
 preop.transfusions..rbc.w.in.72.hrs.prior.to.surgery.start.time.,
 congestive.heart.failure.w.in.30.days.prior.to.surgery,ascites.w.in.30.days.prior.to.surgery,
 colectomy.primary.indication.for.surgery,
 colectomy.non.emergent.indication.icd10.code,
-postop.death.w.in.30.days.of.procedure,
 currently.requiring.or.on.dialysis,
 acute.renal.failure,
 case.number
@@ -73,6 +73,7 @@ Impute missing values using random forest nonparametric modeling.
 library(MASS)
 model <- glm(ileostomy.formation~.,data=data.imp,family="binomial")
 step.model <- stepAIC(model,trace = FALSE,direction = "backward")
+summary(model)
 ```
 
 Use step wise AIC logistic regression with backward selection to select the variables that are the most useful to help the explain the probability of an illeostomy after logistic regression (will be referred to as original logistic model) on all the variables throws a warning. 
@@ -92,7 +93,7 @@ observed.classes <- data.imp$ileostomy.formation
 mean(predicted.classes == observed.classes)
 ```
 
-Although original logistic model throws a warning, the model does predict the correct outcome for 88% of the observations. 
+Although original logistic model throws a warning, the model does predict the correct outcome for 87% of the observations. 
 
 ```{r}
 summary(step.model)
@@ -102,39 +103,21 @@ Coefficients for the stepwise AIC logistic model.
 ```{r}
 vif(step.model)
 ```
-"X..of.readmissions.w.in.30.days" & "X..of.unplanned.readmissions" has VIF>=10, which suggest multicollinearity and one will be removed from the model. I removed "X..of.unplanned.readmissions".
+Using VIF, no multicolinearity detected (VIF>=5)
 
 ```{r}
-step.model2 <- glm(formula = ileostomy.formation ~ age.at.time.of.surgery + 
-    race + elective.surgery + height + weight + bmi + wbc + platelet.count + 
-    emergency.case + wound.classification + asa.classification + 
-    X..of.other.procedures + X..of.concurrent.procedures + duration.of.surgical.procedure..in.minutes. + 
-    X..of.postop.organ.space.ssi + X..of.postop.wound.disruption + 
-    X..of.postop.pulmonary.embolism + X..of.postop.on.ventilator...48.hours + 
-    X..of.postop.progressive.renal.insufficiency + X..of.postop.vein.thrombosis.requiring.therapy + 
-    X..of.postop.sepsis + hospital.length.of.stay + hospital.discharge.destination + 
-    first.unplanned.return.to.or + colectomy.mechanical.bowel.prep + 
-    colectomy.operative.approach + colectomy.prolonged.postoperative.npo.or.ngt.use+X..of.readmissions.w.in.30.days, 
-    family = "binomial", data = data.imp)
-vif(step.model2)
-```
-
-new model and no high VIF (>=5) to suggest multicollinearity.
-
-```{r}
-probabilities <- predict(step.model2, data.imp, type = "response")
+probabilities <- predict(step.model, data.imp, type = "response")
 predicted.classes <- ifelse(probabilities > 0.5, "None", "Ileostomy")
 # Prediction accuracy
 observed.classes <- data.imp$ileostomy.formation
 mean(predicted.classes == observed.classes)
 ```
-The accuracy does go down by about one percent using the stepwise AIC logistic model and removing one multicollinear variables. 
+The accuracy does go down by about one percent using the step wise AIC logistic model. 
 
 ```{r}
 #the coefficients for each model ran in here
 as.data.frame(coef(model))
 as.data.frame(coef(step.model))
-as.data.frame(coef(step.model2))
 ```
 
 ```{r}
