@@ -1,0 +1,32 @@
+Odds Ratio (95% CI)	p-value
+(Intercept)	112097.01 (0,Inf)	0.9831
+age.at.time.of.surgery	1.02 (1.01,1.04)	1e-04
+raceBlack or African American	0 (0,Inf)	0.9789
+raceNative Hawaiian or Other Pacific Islander	2.88 (0,Inf)	0.9997
+raceSome Other Race	0 (0,Inf)	0.9753
+raceUnknown/Not Reported	0 (0,Inf)	0.98
+raceWhite	0 (0,Inf)	0.9783
+origin.statusFrom acute care hospital inpatient	1.65 (0.38,7.09)	0.5016
+origin.statusHome/Permanent residence	0.95 (0.26,3.51)	0.9384
+origin.statusNot transferred (admitted from home)	1.63 (0.45,5.9)	0.4582
+origin.statusNursing home - Chronic care - Intermediate care	0 (0,Inf)	0.9939
+origin.statusOther facility	2856737.8 (0,Inf)	0.993
+origin.statusOutside emergency department	0.59 (0.12,2.85)	0.5095
+origin.statusTransfer from other	0.17 (0.01,3.11)	0.2291
+height	1.02 (1,1.04)	0.02
+weight	0.99 (0.99,0.99)	0
+bmi	1.06 (1.02,1.09)	0.0015
+platelet.count	1 (1,1)	0.0051
+emergency.caseYes	0.33 (0.14,0.77)	0.0106
+wound.classificationClean/Contaminated	6.16 (0.38,100.17)	0.2015
+wound.classificationContaminated	2.69 (0.16,43.82)	0.4876
+wound.classificationDirty/Infected	5.29 (0.32,86.94)	0.2433
+asa.classificationASA 2 - Mild Disturb	1.33 (0.25,7.2)	0.7405
+asa.classificationASA 3 - Severe Disturb	0.79 (0.15,4.29)	0.7876
+asa.classificationASA 4 - Life Threat	0.28 (0.04,2.04)	0.2081
+X..of.other.procedures	0.61 (0.53,0.7)	0
+X..of.concurrent.procedures	1.32 (1.05,1.65)	0.0154
+duration.of.surgical.procedure..in.minutes.	1 (0.99,1)	0.0023
+colectomy.mechanical.bowel.prepYes	2.13 (1.52,2.99)	0
+colectomy.operative.approachMIS, unplanned conversion to open	0.91 (0.52,1.6)	0.7448
+colectomy.operative.approachOpen	0.5 (0.34,0.73)	3e-04

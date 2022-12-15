@@ -1,0 +1,72 @@
+Odds Ratio (95% CI)	p-value
+(Intercept)	5.77113481409117e+196 (0,Inf)	0.9437
+age.at.time.of.surgery	1.01 (1,1.02)	0.2005
+genderMale	1.14 (0.78,1.67)	0.4886
+raceBlack or African American	1.29 (0.34,4.94)	0.7063
+raceNative Hawaiian or Other Pacific Islander	0 (0,Inf)	0.9986
+raceSome Other Race	29.08 (0,Inf)	0.9994
+raceUnknown/Not Reported	0.75 (0.2,2.9)	0.6815
+raceWhite	1.5 (0.44,5.14)	0.5214
+hispanic.ethnicityYes	2.34 (1.16,4.7)	0.0171
+cpt.code	0.99 (0.98,1)	0.0972
+in.out.patient.statusOutpatient	0 (0,Inf)	0.979
+elective.surgeryYes	1.38 (0.93,2.07)	0.1126
+origin.statusFrom acute care hospital inpatient	0 (0,Inf)	0.9935
+origin.statusHome/Permanent residence	27449.64 (0,Inf)	0.9968
+origin.statusNot transferred (admitted from home)	0 (0,Inf)	0.9937
+origin.statusNursing home - Chronic care - Intermediate care	0 (0,Inf)	0.9986
+origin.statusOther facility	2.17 (0,Inf)	0.9999
+origin.statusOutside emergency department	0 (0,Inf)	0.994
+origin.statusTransfer from other	0 (0,Inf)	0.9939
+height	0.99 (0.98,1.01)	0.5428
+weight	1 (1,1)	0.3389
+bmi	0.99 (0.96,1.02)	0.6107
+diabetes.mellitusNo	0.39 (0.08,2)	0.2605
+diabetes.mellitusNon-Insulin	1.31 (0.15,11.53)	0.8095
+current.smoker.within.1.yearYes	0.79 (0.56,1.1)	0.1631
+dyspneaNo	0.82 (0.32,2.11)	0.6825
+functional.heath.statusPartially Dependent	851448285.56 (0,Inf)	0.9965
+functional.heath.statusTotally Dependent	419589859.2 (0,Inf)	0.9985
+history.of.severe.copdYes	1.71 (0.4,7.2)	0.4661
+hypertension.requiring.medicationYes	0.95 (0.63,1.45)	0.821
+disseminated.cancerYes	1.59 (0.2,12.8)	0.6643
+open.wound.with.or.without.infectionYes	0.4 (0.18,0.88)	0.0223
+steroid.immunosuppressant.use.for.chronic.conditionYes	1.8 (0.86,3.76)	0.1198
+bleeding.disorderYes	1.82 (0.62,5.35)	0.2793
+sepsis..sirs.sepsis.septic.shock...48h.Sepsis	1.21 (0.46,3.18)	0.7044
+sepsis..sirs.sepsis.septic.shock...48h.SIRS	0.91 (0.4,2.1)	0.831
+serum.sodium	0.92 (0.87,0.97)	0.0021
+bun	0.99 (0.96,1.02)	0.5399
+serum.creatinine	1.41 (0.7,2.84)	0.3376
+albumin	1.17 (0.85,1.61)	0.3321
+wbc	0.99 (0.94,1.04)	0.6405
+hematocrit	0.98 (0.95,1.02)	0.3803
+platelet.count	1 (1,1)	0.906
+emergency.caseYes	3.55 (1.48,8.49)	0.0045
+wound.classificationClean/Contaminated	1.52 (0.09,25.3)	0.7719
+wound.classificationContaminated	2 (0.12,33.46)	0.631
+wound.classificationDirty/Infected	1.98 (0.12,33.51)	0.6362
+asa.classificationASA 2 - Mild Disturb	0.36 (0.07,1.75)	0.2068
+asa.classificationASA 3 - Severe Disturb	0.46 (0.09,2.27)	0.3433
+asa.classificationASA 4 - Life Threat	0.67 (0.07,6.1)	0.7242
+X..of.other.procedures	1.04 (0.91,1.19)	0.6033
+X..of.concurrent.procedures	1.26 (1,1.58)	0.0527
+duration.of.surgical.procedure..in.minutes.	1 (1,1.01)	0.136
+colectomy.steroid.immunosuppressant.for.inflammatory.bowelYes	1.79 (0.83,3.88)	0.1397
+colectomy.mechanical.bowel.prepYes	1.17 (0.83,1.65)	0.371
+colectomy.oral.antibiotic.prepYes	0.75 (0.51,1.12)	0.163
+colectomy.chemotherapy.w.in.90.daysYes	0 (0,Inf)	0.9805
+colectomy.operative.approachMIS, unplanned conversion to open	1.11 (0.62,1.99)	0.7331
+colectomy.operative.approachOpen	1.09 (0.61,1.97)	0.7663
+colectomy.number.of.nodes.evaluated	1.01 (0.97,1.05)	0.6118
+ileostomy.formationNone	0.76 (0.51,1.12)	0.1677
+biologic.agent.60.days.prior.to.surgeryNo	0.34 (0.11,1.04)	0.0586
+biologic.agent.60.days.prior.to.surgeryYes	0.28 (0.09,0.85)	0.0243
+immune.modulation.60.days.prior.to.surgeryNo	288339864.37 (0,Inf)	0.9974
+immune.modulation.60.days.prior.to.surgeryYes	249875968.95 (0,Inf)	0.9974
+colonic.dysplasiaHigh Grade Dysplasia	2.88 (0.06,139.18)	0.5928
+colonic.dysplasiaLow grade Dysplasia	4.89 (0.13,182.64)	0.3903
+colonic.dysplasiaNo	529125136.76 (0,Inf)	0.9985
+colonic.dysplasiaNo Dysplasia	4.8 (0.2,116.18)	0.3342
+colonic.dysplasiaNot applicable	15.36 (0.5,467.4)	0.117
+colonic.dysplasiaUnable to determine	4.03 (0.16,102.81)	0.3991

@@ -1,0 +1,32 @@
+"term","estimate","std.error","statistic","p.value"
+"(Intercept)",112083.566,549.58,0.021,0.983
+"age.at.time.of.surgery",1.024,0.006,3.865,0
+"raceBlack or African American",0,549.575,-0.026,0.979
+"raceNative Hawaiian or Other Pacific Islander",2.878,2461.676,0,1
+"raceSome Other Race",0,549.576,-0.031,0.975
+"raceUnknown/Not Reported",0,549.575,-0.025,0.98
+"raceWhite",0,549.575,-0.027,0.978
+"origin.statusFrom acute care hospital inpatient",1.649,0.744,0.672,0.502
+"origin.statusHome/Permanent residence",0.949,0.667,-0.077,0.938
+"origin.statusNot transferred (admitted from home)",1.627,0.657,0.742,0.458
+"origin.statusNursing home - Chronic care - Intermediate care",0,2399.545,-0.008,0.994
+"origin.statusOther facility",2856192.494,1683.358,0.009,0.993
+"origin.statusOutside emergency department",0.587,0.807,-0.66,0.509
+"origin.statusTransfer from other",0.165,1.496,-1.203,0.229
+"height",1.02,0.009,2.327,0.02
+"weight",0.99,0.002,-4.865,0
+"bmi",1.057,0.017,3.167,0.002
+"platelet.count",0.998,0.001,-2.804,0.005
+"emergency.caseYes",0.333,0.43,-2.555,0.011
+"wound.classificationClean/Contaminated",6.16,1.423,1.277,0.201
+"wound.classificationContaminated",2.689,1.424,0.694,0.488
+"wound.classificationDirty/Infected",5.291,1.428,1.167,0.243
+"asa.classificationASA 2 - Mild Disturb",1.33,0.861,0.331,0.741
+"asa.classificationASA 3 - Severe Disturb",0.793,0.861,-0.269,0.788
+"asa.classificationASA 4 - Life Threat",0.277,1.018,-1.259,0.208
+"X..of.other.procedures",0.611,0.07,-7.079,0
+"X..of.concurrent.procedures",1.318,0.114,2.423,0.015
+"duration.of.surgical.procedure..in.minutes.",0.995,0.002,-3.044,0.002
+"colectomy.mechanical.bowel.prepYes",2.13,0.173,4.377,0
+"colectomy.operative.approachMIS, unplanned conversion to open",0.91,0.289,-0.326,0.745
+"colectomy.operative.approachOpen",0.497,0.193,-3.616,0

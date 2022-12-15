@@ -1,0 +1,72 @@
+"term","estimate","std.error","statistic","p.value"
+"(Intercept)",5.77374994459723e+196,6420.562,0.071,0.944
+"age.at.time.of.surgery",1.007,0.005,1.28,0.2
+"genderMale",1.142,0.193,0.693,0.489
+"raceBlack or African American",1.294,0.684,0.377,0.706
+"raceNative Hawaiian or Other Pacific Islander",0,10754.013,-0.002,0.999
+"raceSome Other Race",29.079,4728.615,0.001,0.999
+"raceUnknown/Not Reported",0.754,0.688,-0.41,0.682
+"raceWhite",1.496,0.629,0.641,0.521
+"hispanic.ethnicityYes",2.337,0.356,2.385,0.017
+"cpt.code",0.99,0.006,-1.658,0.097
+"in.out.patient.statusOutpatient",0,553.278,-0.026,0.979
+"elective.surgeryYes",1.385,0.205,1.587,0.113
+"origin.statusFrom acute care hospital inpatient",0,2475.335,-0.008,0.993
+"origin.statusHome/Permanent residence",27446.666,2568.215,0.004,0.997
+"origin.statusNot transferred (admitted from home)",0,2475.335,-0.008,0.994
+"origin.statusNursing home - Chronic care - Intermediate care",0,11978.582,-0.002,0.999
+"origin.statusOther facility",2.168,7681.391,0,1
+"origin.statusOutside emergency department",0,2475.335,-0.008,0.994
+"origin.statusTransfer from other",0,2475.336,-0.008,0.994
+"height",0.995,0.009,-0.609,0.543
+"weight",1.002,0.002,0.956,0.339
+"bmi",0.993,0.015,-0.509,0.611
+"diabetes.mellitusNo",0.394,0.828,-1.125,0.26
+"diabetes.mellitusNon-Insulin",1.307,1.111,0.241,0.81
+"current.smoker.within.1.yearYes",0.785,0.174,-1.395,0.163
+"dyspneaNo",0.822,0.48,-0.409,0.682
+"functional.heath.statusPartially Dependent",851065796.3,4659.437,0.004,0.996
+"functional.heath.statusTotally Dependent",419678709.871,10754.013,0.002,0.999
+"history.of.severe.copdYes",1.707,0.734,0.729,0.466
+"hypertension.requiring.medicationYes",0.953,0.213,-0.226,0.821
+"disseminated.cancerYes",1.587,1.065,0.434,0.664
+"open.wound.with.or.without.infectionYes",0.398,0.403,-2.286,0.022
+"steroid.immunosuppressant.use.for.chronic.conditionYes",1.797,0.377,1.556,0.12
+"bleeding.disorderYes",1.815,0.551,1.082,0.279
+"sepsis..sirs.sepsis.septic.shock...48h.Sepsis",1.207,0.495,0.379,0.704
+"sepsis..sirs.sepsis.septic.shock...48h.SIRS",0.913,0.425,-0.213,0.831
+"serum.sodium",0.916,0.029,-3.081,0.002
+"bun",0.991,0.014,-0.613,0.54
+"serum.creatinine",1.409,0.358,0.959,0.338
+"albumin",1.171,0.163,0.97,0.332
+"wbc",0.988,0.026,-0.467,0.64
+"hematocrit",0.985,0.017,-0.877,0.38
+"platelet.count",1,0.001,-0.118,0.906
+"emergency.caseYes",3.547,0.446,2.84,0.005
+"wound.classificationClean/Contaminated",1.516,1.436,0.29,0.772
+"wound.classificationContaminated",1.996,1.439,0.48,0.631
+"wound.classificationDirty/Infected",1.98,1.443,0.473,0.636
+"asa.classificationASA 2 - Mild Disturb",0.361,0.806,-1.263,0.207
+"asa.classificationASA 3 - Severe Disturb",0.464,0.811,-0.948,0.343
+"asa.classificationASA 4 - Life Threat",0.672,1.125,-0.353,0.724
+"X..of.other.procedures",1.037,0.069,0.52,0.603
+"X..of.concurrent.procedures",1.256,0.118,1.937,0.053
+"duration.of.surgical.procedure..in.minutes.",1.002,0.001,1.491,0.136
+"colectomy.steroid.immunosuppressant.for.inflammatory.bowelYes",1.791,0.394,1.477,0.14
+"colectomy.mechanical.bowel.prepYes",1.17,0.176,0.895,0.371
+"colectomy.oral.antibiotic.prepYes",0.753,0.203,-1.395,0.163
+"colectomy.chemotherapy.w.in.90.daysYes",0,653.802,-0.024,0.98
+"colectomy.operative.approachMIS, unplanned conversion to open",1.107,0.3,0.341,0.733
+"colectomy.operative.approachOpen",1.093,0.3,0.297,0.766
+"colectomy.number.of.nodes.evaluated",1.009,0.018,0.508,0.612
+"ileostomy.formationNone",0.76,0.199,-1.38,0.168
+"biologic.agent.60.days.prior.to.surgeryNo",0.342,0.567,-1.891,0.059
+"biologic.agent.60.days.prior.to.surgeryYes",0.281,0.563,-2.252,0.024
+"immune.modulation.60.days.prior.to.surgeryNo",288440677.831,5918.245,0.003,0.997
+"immune.modulation.60.days.prior.to.surgeryYes",249757248.976,5918.245,0.003,0.997
+"colonic.dysplasiaHigh Grade Dysplasia",2.881,1.978,0.535,0.593
+"colonic.dysplasiaLow grade Dysplasia",4.889,1.847,0.859,0.39
+"colonic.dysplasiaNo",529265100.787,10754.013,0.002,0.999
+"colonic.dysplasiaNo Dysplasia",4.802,1.625,0.966,0.334
+"colonic.dysplasiaNot applicable",15.364,1.743,1.568,0.117
+"colonic.dysplasiaUnable to determine",4.031,1.653,0.843,0.399

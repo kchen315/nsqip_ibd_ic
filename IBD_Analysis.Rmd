@@ -96,7 +96,8 @@ mean(predicted.classes == observed.classes)
 Although original logistic model throws a warning, the model does predict the correct outcome for 87% of the observations. 
 
 ```{r}
-summary(step.model)
+library(jtools)
+summ(step.model)
 ```
 Coefficients for the stepwise AIC logistic model. 
 
@@ -116,9 +117,169 @@ The accuracy does go down by about one percent using the step wise AIC logistic 
 
 ```{r}
 #the coefficients for each model ran in here
-as.data.frame(coef(model))
-as.data.frame(coef(step.model))
+#as.data.frame(coef(model))
+#as.data.frame(coef(step.model))
 ```
+
+```{r}
+library(tidyr)
+library(broom)
+
+step.table <- as.data.frame(cbind(
+  round(exp(coef(step.model)),2),
+  round(exp(confint.default(step.model)), 2),
+  round(summary(step.model)$coefficients[,4],4)
+  ))
+
+colnames(step.table) <- c("Odds Ratio Estimate","Lower","Upper","p-value")
+step.table = unite(step.table,"95%_CI",c("Lower","Upper"), sep = ",")
+step.table$`95%_CI`<-paste0("(",step.table$`95%_CI`,")")
+step.table = unite(step.table,"Odds Ratio (95% CI)",c("Odds Ratio Estimate","95%_CI"), sep = " ")
+write.table(step.table, file = "step_table.txt", sep = "\t", quote = FALSE, row.names = T)
+
+step_mod <- as.data.frame(tidy(step.model))
+step_mod[,c(2,3,4,5)] <- round(step_mod[,c(2,3,4,5)],3)
+step_mod$estimate<-round(exp(step_mod$estimate),3)
+write.csv(step_mod, "step_model.csv",row.names = FALSE)
+```
+
+```{r}
+library(tidyr)
+library(broom)
+
+#removed ventilator.dependentYes because it's all NA
+model.table <- as.data.frame(cbind(
+  round(exp(na.omit(coef(model))),2),
+  round(exp(na.omit(confint.default(model))), 2),
+  round(summary(model)$coefficients[,4],4)
+  ))
+
+colnames(model.table) <- c("Odds Ratio Estimate","Lower","Upper","p-value")
+model.table = unite(model.table,"95%_CI",c("Lower","Upper"), sep = ",")
+model.table$`95%_CI`<-paste0("(",model.table$`95%_CI`,")")
+model.table = unite(model.table,"Odds Ratio (95% CI)",c("Odds Ratio Estimate","95%_CI"), sep = " ")
+write.table(model.table, file = "model_table.txt", sep = "\t", quote = FALSE, row.names = T)
+
+model_mod <- na.omit(as.data.frame(tidy(model)))
+model_mod[,c(2,3,4,5)] <- round(model_mod[,c(2,3,4,5)],3)
+model_mod$estimate<- round(exp(model_mod$estimate),3)
+write.csv(model_mod, "model_model.csv",row.names = FALSE)
+```
+
+# Part 2
+
+```{r}
+data2 = read.csv("~/Documents/nsqip_ibd_ic/data/outcome_data.csv",header = TRUE)
+```
+
+```{r,warning=FALSE}
+library(broom)
+library(tidyr)
+
+#for inf_comp
+
+data_inf <- cbind(data.imp,data2$inf_comp)
+data_inf$`data2$inf_comp`<-as.factor(data_inf$`data2$inf_comp`)
+
+#stepwise + regular AIC model make sure illeostomy is inside
+model_inf <- glm(data_inf$`data2$inf_comp`~.,data=data_inf,family="binomial")
+#step_inf <- stepAIC(model_inf,trace = FALSE,direction = "backward")
+step_inf2 <- glm(formula = data_inf$`data2$inf_comp` ~ gender + hispanic.ethnicity + cpt.code + elective.surgery + height + weight + current.smoker.within.1.year + 
+dyspnea + history.of.severe.copd + steroid.immunosuppressant.use.for.chronic.condition + serum.sodium + serum.creatinine + emergency.case + X..of.other.procedures + colectomy.steroid.immunosuppressant.for.inflammatory.bowel + 
+colectomy.oral.antibiotic.prep + biologic.agent.60.days.prior.to.surgery + 
+immune.modulation.60.days.prior.to.surgery + ileostomy.formation, family = "binomial", data = data_inf)
+
+#removed ventilator.dependentYes because it's all NA Regular
+model_inf.table <- as.data.frame(cbind(
+  round(exp(na.omit(coef(model_inf))),2),
+  round(exp(na.omit(confint.default(model_inf))), 2),
+  round(summary(model_inf)$coefficients[,4],4)
+  ))
+
+colnames(model_inf.table) <- c("Odds Ratio Estimate","Lower","Upper","p-value")
+model_inf.table = unite(model_inf.table,"95%_CI",c("Lower","Upper"), sep = ",")
+model_inf.table$`95%_CI`<-paste0("(",model_inf.table$`95%_CI`,")")
+model_inf.table = unite(model_inf.table,"Odds Ratio (95% CI)",c("Odds Ratio Estimate","95%_CI"), sep = " ")
+write.table(model_inf.table, file = "model_inf.txt", sep = "\t", quote = FALSE, row.names = T)
+
+model_inf_data <- na.omit(as.data.frame(tidy(model_inf)))
+model_inf_data[,c(2,3,4,5)] <- round(model_inf_data[,c(2,3,4,5)],3)
+model_inf_data$estimate<- round(exp(model_inf_data$estimate),3)
+write.csv(model_inf_data, "model_inf.csv",row.names = FALSE)
+
+#removed ventilator.dependentYes because it's all NA AIC
+step_inf.table <- as.data.frame(cbind(
+  round(exp(na.omit(coef(step_inf2))),2),
+  round(exp(na.omit(confint.default(step_inf2))), 2),
+  round(summary(step_inf2)$coefficients[,4],4)
+  ))
+
+colnames(step_inf.table) <- c("Odds Ratio Estimate","Lower","Upper","p-value")
+step_inf.table = unite(step_inf.table,"95%_CI",c("Lower","Upper"), sep = ",")
+step_inf.table$`95%_CI`<-paste0("(",step_inf.table$`95%_CI`,")")
+step_inf.table = unite(step_inf.table,"Odds Ratio (95% CI)",c("Odds Ratio Estimate","95%_CI"), sep = " ")
+write.table(step_inf.table, file = "step_inf.txt", sep = "\t", quote = FALSE, row.names = T)
+
+step_inf_data <- na.omit(as.data.frame(tidy(step_inf2)))
+step_inf_data[,c(2,3,4,5)] <- round(step_inf_data[,c(2,3,4,5)],3)
+step_inf_data$estimate<- round(exp(step_inf_data$estimate),3)
+write.csv(step_inf_data, "step_inf.csv",row.names = FALSE)
+```
+
+```{r,warning=FALSE}
+#for any_comp
+data_any <- cbind(data.imp,data2$any_comp)
+data_any$`data2$any_comp`<-as.factor(data_any$`data2$any_comp`)
+
+#stepwise + regular AIC model make sure illeostomy is inside
+model_any <- glm(data_any$`data2$any_comp`~.,data=data_any,family="binomial")
+#step_any <- stepAIC(model_any,trace = FALSE,direction = "backward")
+step_any2 <- glm(formula = data_any$`data2$any_comp` ~ gender + hispanic.ethnicity + cpt.code + elective.surgery + height + weight + current.smoker.within.1.year + 
+dyspnea + history.of.severe.copd + steroid.immunosuppressant.use.for.chronic.condition + serum.sodium + serum.creatinine + emergency.case + X..of.other.procedures + colectomy.steroid.immunosuppressant.for.inflammatory.bowel + 
+colectomy.oral.antibiotic.prep + biologic.agent.60.days.prior.to.surgery + 
+immune.modulation.60.days.prior.to.surgery + ileostomy.formation, family = "binomial", data = data_any)
+
+#removed ventilator.dependentYes because it's all NA Regular
+model_any.table <- as.data.frame(cbind(
+  round(exp(na.omit(coef(model_any))),2),
+  round(exp(na.omit(confint.default(model_any))), 2),
+  round(summary(model_any)$coefficients[,4],4)
+  ))
+
+colnames(model_any.table) <- c("Odds Ratio Estimate","Lower","Upper","p-value")
+model_any.table = unite(model_any.table,"95%_CI",c("Lower","Upper"), sep = ",")
+model_any.table$`95%_CI`<-paste0("(",model_any.table$`95%_CI`,")")
+model_any.table = unite(model_any.table,"Odds Ratio (95% CI)",c("Odds Ratio Estimate","95%_CI"), sep = " ")
+write.table(model_any.table, file = "model_any.txt", sep = "\t", quote = FALSE, row.names = T)
+
+model_any_data <- na.omit(as.data.frame(tidy(model_any)))
+model_any_data[,c(2,3,4,5)] <- round(model_any_data[,c(2,3,4,5)],3)
+model_any_data$estimate<- round(exp(model_any_data$estimate),3)
+write.csv(model_any_data, "model_any.csv",row.names = FALSE)
+
+#removed ventilator.dependentYes because it's all NA AIC
+step_any.table <- as.data.frame(cbind(
+  round(exp(na.omit(coef(step_any2))),2),
+  round(exp(na.omit(confint.default(step_any2))), 2),
+  round(summary(step_any2)$coefficients[,4],4)
+  ))
+
+colnames(step_any.table) <- c("Odds Ratio Estimate","Lower","Upper","p-value")
+step_any.table = unite(step_any.table,"95%_CI",c("Lower","Upper"), sep = ",")
+step_any.table$`95%_CI`<-paste0("(",step_any.table$`95%_CI`,")")
+step_any.table = unite(step_any.table,"Odds Ratio (95% CI)",c("Odds Ratio Estimate","95%_CI"), sep = " ")
+write.table(step_any.table, file = "step_any.txt", sep = "\t", quote = FALSE, row.names = T)
+
+step_any_data <- na.omit(as.data.frame(tidy(step_any2)))
+step_any_data[,c(2,3,4,5)] <- round(step_any_data[,c(2,3,4,5)],3)
+step_any_data$estimate<- round(exp(step_any_data$estimate),3)
+write.csv(step_any_data, "step_any.csv",row.names = FALSE)
+```
+
+
+
+
+
 
 ```{r}
 #other stuff to experiment with it
