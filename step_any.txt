@@ -1,21 +1,22 @@
 Odds Ratio (95% CI)	p-value
-(Intercept)	1.59444601880915e+209 (2.3250548577727e+100,Inf)	2e-04
-genderMale	1.09 (0.79,1.51)	0.6032
-hispanic.ethnicityYes	1.25 (0.72,2.18)	0.4291
-cpt.code	0.99 (0.98,1)	2e-04
-elective.surgeryYes	1.35 (1,1.82)	0.0496
-height	1 (0.98,1.01)	0.7478
-weight	1 (1,1)	0.8896
-current.smoker.within.1.yearYes	0.8 (0.59,1.09)	0.1598
-dyspneaNo	0.83 (0.34,2.05)	0.6887
-history.of.severe.copdYes	2.41 (0.64,9.06)	0.1938
-steroid.immunosuppressant.use.for.chronic.conditionYes	2.31 (1.13,4.69)	0.021
-serum.sodium	0.93 (0.88,0.98)	0.0034
-serum.creatinine	1.7 (0.94,3.09)	0.0801
-emergency.caseYes	1.74 (0.75,4.03)	0.1955
-X..of.other.procedures	1.13 (1.01,1.26)	0.0297
-colectomy.steroid.immunosuppressant.for.inflammatory.bowelYes	1.12 (0.54,2.32)	0.7711
-colectomy.oral.antibiotic.prepYes	0.87 (0.64,1.19)	0.3873
-biologic.agent.60.days.prior.to.surgeryYes	1.07 (0.82,1.4)	0.6052
-immune.modulation.60.days.prior.to.surgeryYes	0.68 (0.51,0.92)	0.0112
-ileostomy.formationNone	0.69 (0.5,0.97)	0.0323
+(Intercept)	4.88784328030565e+264 (0,Inf)	0.8145
+cpt.code	0.99 (0.98,0.99)	0
+elective.surgeryYes	1.49 (1.06,2.1)	0.0223
+origin.statusFrom acute care hospital inpatient	0 (0,Inf)	0.9938
+origin.statusHome/Permanent residence	5630.52 (0,Inf)	0.9974
+origin.statusNot transferred (admitted from home)	0 (0,Inf)	0.994
+origin.statusNursing home - Chronic care - Intermediate care	0 (0,Inf)	0.9987
+origin.statusOther facility	2.66 (0,Inf)	0.9999
+origin.statusOutside emergency department	0 (0,Inf)	0.9942
+origin.statusTransfer from other	0 (0,Inf)	0.9941
+functional.heath.statusPartially Dependent	481343309.52 (0,Inf)	0.9967
+functional.heath.statusTotally Dependent	585548593.36 (0,Inf)	0.9985
+open.wound.with.or.without.infectionYes	0.51 (0.24,1.1)	0.0874
+steroid.immunosuppressant.use.for.chronic.conditionYes	2.68 (1.97,3.64)	0
+serum.sodium	0.92 (0.87,0.98)	0.0055
+serum.creatinine	1.68 (0.95,2.99)	0.0747
+emergency.caseYes	3.63 (1.53,8.62)	0.0035
+X..of.concurrent.procedures	1.18 (0.95,1.48)	0.1406
+duration.of.surgical.procedure..in.minutes.	1 (1,1.01)	0.0015
+colectomy.chemotherapy.w.in.90.daysYes	0 (0,Inf)	0.9783
+ileostomy.formationNone	0.69 (0.48,0.99)	0.0419
