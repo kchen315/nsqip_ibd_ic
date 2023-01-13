@@ -1,0 +1,70 @@
+"term","estimate","std.error","statistic","p.value"
+"(Intercept)",4.10961949237561e+49,289.168,0.395,0.693
+"age.at.time.of.surgery",1.002,0.005,0.337,0.736
+"genderMale",0.725,0.193,-1.666,0.096
+"raceBlack or African American",1.471,0.673,0.573,0.566
+"raceNative Hawaiian or Other Pacific Islander",0,2399.545,-0.006,0.995
+"raceSome Other Race",4.486,1.318,1.138,0.255
+"raceUnknown/Not Reported",0.791,0.684,-0.343,0.732
+"raceWhite",1.38,0.622,0.518,0.604
+"hispanic.ethnicityYes",1.964,0.348,1.943,0.052
+"cpt.code",0.997,0.007,-0.387,0.699
+"in.out.patient.statusOutpatient",1.65,1.286,0.39,0.697
+"elective.surgeryYes",2.102,0.212,3.509,0
+"origin.statusFrom acute care hospital inpatient",1.209,0.701,0.271,0.786
+"origin.statusHome/Permanent residence",1.232,0.62,0.337,0.736
+"origin.statusNot transferred (admitted from home)",1.449,0.611,0.608,0.543
+"origin.statusNursing home - Chronic care - Intermediate care",0,2399.546,-0.008,0.994
+"origin.statusOther facility",15479080.111,565.186,0.029,0.977
+"origin.statusOutside emergency department",2.268,0.789,1.039,0.299
+"origin.statusTransfer from other",5.155,1.802,0.91,0.363
+"height",1.017,0.009,1.876,0.061
+"weight",1.002,0.002,1.254,0.21
+"bmi",0.998,0.014,-0.111,0.912
+"diabetes.mellitusNo",0.944,0.806,-0.072,0.943
+"diabetes.mellitusNon-Insulin",1.429,1.057,0.338,0.735
+"current.smoker.within.1.yearYes",0.822,0.183,-1.071,0.284
+"dyspneaNo",2.092,0.51,1.446,0.148
+"functional.heath.statusPartially Dependent",4.655,1.833,0.839,0.401
+"functional.heath.statusTotally Dependent",99533019.366,2399.545,0.008,0.994
+"history.of.severe.copdYes",4.212,0.66,2.178,0.029
+"hypertension.requiring.medicationYes",0.941,0.208,-0.294,0.768
+"disseminated.cancerYes",1.811,0.977,0.607,0.544
+"open.wound.with.or.without.infectionYes",0.701,0.444,-0.8,0.424
+"steroid.immunosuppressant.use.for.chronic.conditionYes",2.983,0.459,2.383,0.017
+"bleeding.disorderYes",1.758,0.501,1.125,0.261
+"sepsis..sirs.sepsis.septic.shock...48h.Sepsis",0.497,0.487,-1.435,0.151
+"sepsis..sirs.sepsis.septic.shock...48h.SIRS",0.585,0.462,-1.162,0.245
+"serum.sodium",0.93,0.029,-2.561,0.01
+"bun",0.983,0.014,-1.224,0.221
+"serum.creatinine",1.707,0.349,1.531,0.126
+"albumin",1.09,0.162,0.531,0.595
+"wbc",1.028,0.024,1.134,0.257
+"hematocrit",0.974,0.017,-1.539,0.124
+"platelet.count",0.999,0.001,-1.079,0.281
+"emergency.caseYes",5.403,0.455,3.711,0
+"wound.classificationClean/Contaminated",0.829,1.472,-0.128,0.898
+"wound.classificationContaminated",0.937,1.473,-0.044,0.965
+"wound.classificationDirty/Infected",1.194,1.477,0.12,0.905
+"asa.classificationASA 2 - Mild Disturb",0.561,0.638,-0.907,0.364
+"asa.classificationASA 3 - Severe Disturb",0.601,0.642,-0.793,0.428
+"asa.classificationASA 4 - Life Threat",0.386,0.929,-1.025,0.305
+"X..of.other.procedures",1.092,0.063,1.388,0.165
+"X..of.concurrent.procedures",1.049,0.068,0.696,0.486
+"duration.of.surgical.procedure..in.minutes.",1,0.001,-0.105,0.917
+"colectomy.steroid.immunosuppressant.for.inflammatory.bowelYes",3.387,0.482,2.53,0.011
+"colectomy.mechanical.bowel.prepYes",0.902,0.169,-0.608,0.543
+"colectomy.oral.antibiotic.prepYes",0.676,0.2,-1.956,0.05
+"colectomy.chemotherapy.w.in.90.daysYes",0.264,1.396,-0.954,0.34
+"colectomy.operative.approachMIS, unplanned conversion to open",1.218,0.322,0.612,0.541
+"colectomy.operative.approachOpen",1.175,0.317,0.508,0.612
+"colectomy.number.of.nodes.evaluated",1.014,0.017,0.807,0.42
+"ileostomy.formationNone",1.028,0.187,0.151,0.88
+"biologic.agent.60.days.prior.to.surgeryYes",0.667,0.149,-2.715,0.007
+"immune.modulation.60.days.prior.to.surgeryYes",0.716,0.17,-1.96,0.05
+"colonic.dysplasiaHigh Grade Dysplasia",6.315,1.75,1.053,0.292
+"colonic.dysplasiaLow grade Dysplasia",0,799.29,-0.032,0.974
+"colonic.dysplasiaNo",41491535.478,2399.545,0.007,0.994
+"colonic.dysplasiaNo Dysplasia",6.666,1.294,1.466,0.143
+"colonic.dysplasiaNot applicable",7.486,1.415,1.422,0.155
+"colonic.dysplasiaUnable to determine",4.125,1.338,1.059,0.29

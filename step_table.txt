@@ -1,0 +1,27 @@
+Odds Ratio (95% CI)	p-value
+(Intercept)	161937.64 (0,Inf)	0.9829
+age.at.time.of.surgery	1.03 (1.01,1.04)	0
+raceBlack or African American	0 (0,Inf)	0.9792
+raceNative Hawaiian or Other Pacific Islander	3.5 (0,Inf)	0.9996
+raceSome Other Race	0 (0,Inf)	0.9752
+raceUnknown/Not Reported	0 (0,Inf)	0.9802
+raceWhite	0 (0,Inf)	0.9785
+height	1.02 (1,1.04)	0.0343
+weight	0.99 (0.99,1)	1e-04
+bmi	1.05 (1.02,1.09)	0.005
+functional.heath.statusPartially Dependent	0.09 (0.01,1.02)	0.0523
+functional.heath.statusTotally Dependent	0 (0,Inf)	0.9944
+platelet.count	1 (1,1)	0.0044
+emergency.caseYes	0.43 (0.18,1.02)	0.0552
+wound.classificationClean/Contaminated	5.74 (0.37,89.75)	0.2131
+wound.classificationContaminated	2.4 (0.15,37.73)	0.533
+wound.classificationDirty/Infected	4.19 (0.27,66.17)	0.3085
+asa.classificationASA 2 - Mild Disturb	1.72 (0.33,9.07)	0.5198
+asa.classificationASA 3 - Severe Disturb	1.05 (0.2,5.54)	0.9555
+asa.classificationASA 4 - Life Threat	0.41 (0.05,3.14)	0.3919
+X..of.other.procedures	0.63 (0.54,0.72)	0
+X..of.concurrent.procedures	1.33 (1.05,1.67)	0.0163
+duration.of.surgical.procedure..in.minutes.	0.99 (0.99,1)	9e-04
+colectomy.mechanical.bowel.prepYes	2.2 (1.57,3.1)	0
+colectomy.operative.approachMIS, unplanned conversion to open	0.9 (0.51,1.61)	0.7256
+colectomy.operative.approachOpen	0.47 (0.32,0.7)	2e-04

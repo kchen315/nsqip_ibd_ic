@@ -93,7 +93,7 @@ observed.classes <- data.imp$ileostomy.formation
 mean(predicted.classes == observed.classes)
 ```
 
-Although original logistic model throws a warning, the model does predict the correct outcome for 87% of the observations. 
+Although original logistic model throws a warning, the model does predict the correct outcome for 86% of the observations. 
 
 ```{r}
 library(jtools)
